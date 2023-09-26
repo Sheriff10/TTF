@@ -1,0 +1,19 @@
+.header .row {
+   background: #ffffff69;
+   backdrop-filter: blur(10px);
+   color: #e2e2e2;
+}
+.blur-bg {
+   background: #ffffff69;
+   backdrop-filter: blur(10px);
+}
+.intro .t {
+   font-size: 70px;
+   color: #e3e3e3;
+}
+ .t2 {
+   color: #e3e3e3;
+}
+ .t3 {
+   color: #ba3b46;
+}
