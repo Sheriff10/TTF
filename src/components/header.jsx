@@ -1,47 +1,57 @@
-import React from "react";
-
-export default function Header() {
+// import pdf from '../../public/TRIADDAO_whitepaper.pdf'
+const Header = () => {
+   const toggleMenu = () => {
+      const menu = document.querySelector(".menu-btn .menu-btn-burger");
+      const slide = document.querySelector(".menu-con");
+      if (menu) menu.classList.toggle("open");
+      if (slide) slide.classList.toggle("open");
+   };
+   // menu.addEventListener('click', () => {
+   //   menu.classList.add('open')
+   //   alert('moti tehh')
+   // })
    return (
-      <div className="header sticky-top">
-         <div className="container px-5 pt-4">
-            <div className="row align-items-center rounded-pill px-3">
-               <div className="col-lg-3">
-                  <div className="logo-con">
-                    <img src="TTFgif.gif" alt="TTF" className="img-fluid" />
-                  </div>
-               </div>
+      <>
+         <header>
+            <div className="container px-5 blur-bg rounded-pill">
+               <div className="d-flex align-items-center justify-content-between">
+                     <div className="logo-con">
+                        <img
+                           src="/TTFgif.gif"
+                           alt="traidDao"
+                           className="header-logo"
+                        />
+                     </div>
 
-               {/* Menu */}
-               <div className="col-lg-6 ">
-                  <div className="menu-con  w-100">
-                     <ul className="d-lg-flex justify-content-between align-items-center  mt-2">
+                  <div className="menu-con">
+                     <ul className="gap-3">
                         <li>
                            <a href="#">Home</a>
                         </li>
                         <li>
-                           <a href="#">About</a>
+                           <a href="#about">About</a>
                         </li>
                         <li>
-                           <a href="#">Tokenomics</a>
+                           <a href="#roadmap">Roadmap</a>
                         </li>
                         <li>
-                           <a href="#">Team</a>
-                        </li>
-                        <li>
-                           <a href="#">Roadmap</a>
+                           <a href="#tk">Tokenomics</a>
                         </li>
                      </ul>
                   </div>
-               </div>
-
-               {/* Btn */}
-               <div className="col-lg-3">
-                  <div className="btn-wrap d-flex justify-content-end">
-                     <button className="btn">Try TTf Bot</button>
+                  <div className="btn-wrap">
+                     <a href="#" download>
+                        <div className="btn btn-light">whitepaper</div>
+                     </a>
+                  </div>
+                  <div className="menu-btn" onClick={toggleMenu}>
+                     <div className="menu-btn-burger"></div>
                   </div>
                </div>
             </div>
-         </div>
-      </div>
+         </header>
+      </>
    );
-}
+};
+
+export default Header;

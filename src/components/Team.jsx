@@ -19,7 +19,7 @@ export default function Team() {
                <br />
                <span className="fs-1 fw-bold">TTF Team </span>
 
-               <div className="text-wrap text-center mt-3">
+               <div className="text-wrap text-center my-3">
                   <span className="">
                      We are an international team of 4 from Canada, France,
                      Egypt, and Australia, with a diversified skill set from
@@ -32,7 +32,7 @@ export default function Team() {
             </div>
             <div className="row t-card">
                 {teamArr.map((i, index) => (
-                    <div className="col-6 col-lg-3 p-lg-5">
+                    <div className="col-6 col-lg-3 p-lg-5 mb-4">
                         <div className="box shadow">
                             <div className="box-img d-flex justify-content-center">
                                 <img src={i.img} alt={i.name} width={100} />

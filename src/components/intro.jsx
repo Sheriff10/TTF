@@ -24,14 +24,14 @@ export default function Intro() {
                         symbol of safety and transparency.
                      </p>
 
-                     <div className="btn-wrap row gap-2 ">
-                        <div className="col-5">
-                           <button className="btn bg-red text-white rounded col-12  p-2 ">
+                     <div className="btn-wrap d-flex gap-2 ">
+                        <div className="col">
+                           <button className="btn bg-red text-white rounded h-100 col-12 p-lg-2 ">
                               Read Whitepaper
                            </button>
                         </div>
-                        <div className="col-5">
-                           <button className="btn  text-dark rounded p-2 col-12 bg-gray ">
+                        <div className="col">
+                           <button className="btn  text-dark rounded h-100 col-12 bg-gray p-lg-2 ">
                               Bot guide
                            </button>
                         </div>

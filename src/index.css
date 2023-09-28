@@ -1,4 +1,4 @@
-.header .row {
+.heading .row {
    background: #ffffff69;
    backdrop-filter: blur(10px);
    color: #e2e2e2;
@@ -11,9 +11,50 @@
    font-size: 70px;
    color: #e3e3e3;
 }
- .t2 {
+.t2 {
    color: #e3e3e3;
 }
- .t3 {
+.t3 {
    color: #ba3b46;
+}
+.bots .b-version.r {
+   clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+}
+.bots .b-version.l {
+   clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+}
+.b-version.r,
+.b-version.l {
+   display: flex;
+   justify-content: center;
+}
+
+
+@media (max-width: 994px) {
+   .intro .t {
+      font-size: 40px;
+   }
+   .intro {
+      background: url('/public/TTFgif.gif') no-repeat;
+      background-size: cover; /* Optional: adjust this property based on your needs */
+      background-position: center; /* This centers the background image */
+  }
+  .intro .row{
+   min-height: 0vh;
+  }
+  .intro .container {
+   backdrop-filter: blur(15px);
+   padding: 20px;
+  }
+  
+    .intro-img{
+      display: none !important;
+   }
+   .bots .b-version.r {
+      clip-path: polygon(100% 32%, 100% 59%, 100% 100%, 0 100%, 0 32%, 51% 0);
+      padding: 50px 10px;
+   }
+   .bots .b-version.l {
+      clip-path: polygon(100% 0, 100% 74%, 53% 100%, 0 74%, 0 0, 51% 0);
+   }
 }
