@@ -45,7 +45,7 @@ const AdminLayout = ({ children }) => {
          </div>
 
          {/* Page Content */}
-         <div className="col-12">
+         <div className="col">
             <div className="btn-wrap col-12 bg-dark">
                <button className="btn bg-red text-white m-2" onClick={toggleMenu}>
                   <FaBars />
