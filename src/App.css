@@ -13,6 +13,9 @@ a {
 .bg-red {
    background: #ba3b46;
 }
+.text-red {
+   color: #ba3b46;
+}
 .bg-gray {
    background: #d3d3d3;
 }
