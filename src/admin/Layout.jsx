@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaBars } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 // import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 // import './YourComponent.css'; // You can create a CSS file for custom styling
 
@@ -15,11 +16,11 @@ const AdminLayout = ({ children }) => {
    };
 
    const menuArr = [
-      menuFunc("Header", "#"),
-      menuFunc("Intro", "#"),
-      menuFunc("About", "#"),
-      menuFunc("Solution", "#"),
-      menuFunc("Partners", "#"),
+      menuFunc("Header", "/admin/edit-header"),
+      menuFunc("Intro", "/admin/edit-intro"),
+      menuFunc("About", "/admin/edit-about"),
+      menuFunc("Solution", "/admin/edit-solution"),
+      menuFunc("Partners", "/admin/edit-partners"),
    ];
 
    return (
@@ -33,13 +34,13 @@ const AdminLayout = ({ children }) => {
             </div>
             <div className="list-group list-group-flush">
                {menuArr.map((menu, index) => (
-                  <a
-                     href="#"
+                  <NavLink
+                     to={menu.link}
                      className="list-group-item list-group-item-action my-2"
                      key={index}
                   >
                      {menu.title}
-                  </a>
+                  </NavLink>
                ))}
             </div>
          </div>

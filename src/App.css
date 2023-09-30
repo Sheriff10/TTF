@@ -59,7 +59,6 @@ a {
    width: 70px;
    margin-top: 10px;
 }
-/* .intro .btn-wrap {
-   position: fixed;
-} */
-
+a.active {
+   background: #ba3b46 !important;
+}
