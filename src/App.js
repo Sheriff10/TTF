@@ -8,18 +8,27 @@ import EditAbout from "./admin/edit-about";
 import EditIntro from "./admin/edit-intro";
 import EditSolution from "./admin/edit-solution";
 import EditPartners from "./admin/partners";
+import DataContextWrap from "./context/DataContext";
 
 function App() {
    return (
       <div className="App">
-         <Routes>
-            <Route index element={<Page />} />
-            <Route path={"/admin/edit-header"} element={<EditHeader />} />
-            <Route path={"/admin/edit-about"} element={<EditAbout />} />
-            <Route path={"/admin/edit-intro"} element={<EditIntro />} />
-            <Route path={"/admin/edit-solution"} element={<EditSolution />} />
-            <Route path={"/admin/edit-partners"} element={<EditPartners />} />
-         </Routes>
+         <DataContextWrap>
+            <Routes>
+               <Route index element={<Page />} />
+               <Route path={"/admin/edit-header"} element={<EditHeader />} />
+               <Route path={"/admin/edit-about"} element={<EditAbout />} />
+               <Route path={"/admin/edit-intro"} element={<EditIntro />} />
+               <Route
+                  path={"/admin/edit-solution"}
+                  element={<EditSolution />}
+               />
+               <Route
+                  path={"/admin/edit-partners"}
+                  element={<EditPartners />}
+               />
+            </Routes>
+         </DataContextWrap>
       </div>
    );
 }
