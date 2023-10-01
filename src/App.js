@@ -11,6 +11,7 @@ import EditPartners from "./admin/partners";
 import DataContextWrap from "./context/DataContext";
 
 function App() {
+   window.api = 'http://localhost:5000'
    return (
       <div className="App">
          <DataContextWrap>

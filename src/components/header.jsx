@@ -1,3 +1,6 @@
+import { useContext } from "react";
+import { DataContext } from "../context/DataContext";
+
 // import pdf from '../../public/TRIADDAO_whitepaper.pdf'
 const Header = () => {
    const toggleMenu = () => {
@@ -6,37 +9,32 @@ const Header = () => {
       if (menu) menu.classList.toggle("open");
       if (slide) slide.classList.toggle("open");
    };
-   // menu.addEventListener('click', () => {
-   //   menu.classList.add('open')
-   //   alert('moti tehh')
-   // })
+
+   const {
+      state: { header },
+      dispatch,
+   } = useContext(DataContext);
+
    return (
       <>
          <header>
             <div className="container px-5 blur-bg rounded-pill">
                <div className="d-flex align-items-center justify-content-between">
-                     <div className="logo-con">
-                        <img
-                           src="/TTFgif.gif"
-                           alt="traidDao"
-                           className="header-logo"
-                        />
-                     </div>
+                  <div className="logo-con">
+                     <img
+                        src="/TTFgif.gif"
+                        alt="traidDao"
+                        className="header-logo"
+                     />
+                  </div>
 
                   <div className="menu-con">
                      <ul className="gap-3">
-                        <li>
-                           <a href="#">Home</a>
-                        </li>
-                        <li>
-                           <a href="#about">About</a>
-                        </li>
-                        <li>
-                           <a href="#roadmap">Roadmap</a>
-                        </li>
-                        <li>
-                           <a href="#tk">Tokenomics</a>
-                        </li>
+                        {header.map((menu) => (
+                           <li>
+                              <a href={menu.link}>{menu.title}</a>
+                           </li>
+                        ))}
                      </ul>
                   </div>
                   <div className="btn-wrap">

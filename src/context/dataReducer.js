@@ -21,17 +21,19 @@ export const INITIAL_DATA_STATE = {
 
 export const DataReducer = (state, action) => {
    switch (action.type) {
-      case "HEADER":
-         return { ...state, header: action.payload };
-      case "INTRO":
-         return { ...state, intro: action.payload };
+      // case "HEADER":
+      //    return { ...state, header: action.payload };
+      // case "INTRO":
+      //    return { ...state, intro: action.payload };
 
-      case "ABOUT":
-         return { ...state, about: action.payload };
-      case "SOLUTION":
-         return { ...state, solution: action.payload };
-      case "PARTNERS":
-         return { ...state, partners: action.payload };
+      // case "ABOUT":
+      //    return { ...state, about: action.payload };
+      // case "SOLUTION":
+      //    return { ...state, solution: action.payload };
+      // case "PARTNERS":
+      //    return { ...state, partners: action.payload };
+      case "DATA":
+         return action.payload;
       default:
          break;
    }
