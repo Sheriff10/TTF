@@ -1,6 +1,11 @@
-import React from "react";
-
+import { useContext } from "react";
+import { DataContext } from "../context/DataContext";
 export default function Intro() {
+   const {
+      state: { intro },
+      dispatch,
+   } = useContext(DataContext);
+
    return (
       <div className="intro">
          <div className="container px-5">
@@ -8,9 +13,7 @@ export default function Intro() {
                <div className="col-lg-6">
                   <div className="intro-text">
                      <div className="text-wrap">
-                        <h1 className="t fw-boold">
-                           TTF Token: Safeguarding Your Crypto Investments
-                        </h1>
+                        <h1 className="t fw-boold">{intro.intro_title}</h1>
                      </div>
                      <div className="text-wrap d-flex">
                         <div className="wrap blur-bg p-2 px-4 rounded-pill ">
@@ -19,10 +22,7 @@ export default function Intro() {
                            <span className="t3 fw-bold">Fund</span>
                         </div>
                      </div>
-                     <p className="text-gray">
-                        In a crypto world fraught with scams, meet TTF Token—a
-                        symbol of safety and transparency.
-                     </p>
+                     <p className="text-gray">{intro.intro_slogan}</p>
 
                      <div className="btn-wrap d-flex gap-2 ">
                         <div className="col">
