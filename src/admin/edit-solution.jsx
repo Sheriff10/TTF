@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { DataContext } from "../context/DataContext";
+import { post } from "../function/post";
 import AdminLayout from "./Layout";
 
 const EditSolution = () => {
@@ -8,29 +10,38 @@ const EditSolution = () => {
       // Add more initial cards as needed
    ]);
 
+   const {
+      state: { solution },
+      getData,
+   } = useContext(DataContext);
+
+   // Cards Inputs
+   const [header, setHeader] = useState("");
+   const [text, setText] = useState("");
+
    const [selectedCard, setSelectedCard] = useState(null);
    const [newCard, setNewCard] = useState({ header: "", text: "" });
 
-   const handleInputChange = (e) => {
-      const { name, value } = e.target;
-      setNewCard((prevCard) => ({ ...prevCard, [name]: value }));
-   };
-
-   const handleAddCard = () => {
-      setCards((prevCards) => [...prevCards, { id: Date.now(), ...newCard }]);
-      setNewCard({ header: "", text: "" });
-   };
-
-   const handleEditCard = () => {
-      if (selectedCard) {
-         setCards((prevCards) =>
-            prevCards.map((card) =>
-               card.id === selectedCard.id ? { ...card, ...newCard } : card
-            )
-         );
-         setSelectedCard(null);
-         setNewCard({ header: "", text: "" });
+   const addCard = async (query, data) => {
+      try {
+         const response = await post(`/solution/${query}`, data);
+         console.log(response);
+         resetFields()
+         getData();
+      } catch (error) {
+         console.log(error);
       }
+   };
+   const resetFields = () => {
+      setHeader('');
+      setText('');
+      setSelectedCard(null);
+   }
+
+   const selectCard = (cardText, cardHeader, card) => {
+      setHeader(cardHeader);
+      setText(cardText);
+      setSelectedCard(card);
    };
 
    const handleDeleteCard = () => {
@@ -60,10 +71,8 @@ const EditSolution = () => {
                         id="cardHeader"
                         placeholder="Enter Card Header"
                         name="header"
-                        value={
-                           selectedCard ? selectedCard.header : newCard.header
-                        }
-                        onChange={handleInputChange}
+                        value={header}
+                        onChange={(e) => setHeader(e.target.value)}
                      />
                   </div>
                   <div className="form-group mb-4">
@@ -73,15 +82,21 @@ const EditSolution = () => {
                         id="cardText"
                         placeholder="Enter Card Text"
                         name="text"
-                        value={selectedCard ? selectedCard.text : newCard.text}
-                        onChange={handleInputChange}
+                        value={text}
+                        onChange={(e) => setText(e.target.value)}
                      />
                   </div>
                   {selectedCard ? (
                      <button
                         type="button"
                         className="btn  bg-tblack text-light me-2"
-                        onClick={handleEditCard}
+                        onClick={() =>
+                           addCard("update", {
+                              header,
+                              text,
+                              id: selectedCard._id,
+                           })
+                        }
                      >
                         Edit Card
                      </button>
@@ -89,7 +104,7 @@ const EditSolution = () => {
                      <button
                         type="button"
                         className="btn bg-red text-light mr-2"
-                        onClick={handleAddCard}
+                        onClick={() => addCard("post", { header, text })}
                      >
                         Add Card
                      </button>
@@ -98,7 +113,7 @@ const EditSolution = () => {
                      <button
                         type="button"
                         className="btn btn-danger"
-                        onClick={handleDeleteCard}
+                        onClick={() => addCard('delete', {id: selectedCard._id})}
                      >
                         Delete Card
                      </button>
@@ -110,15 +125,15 @@ const EditSolution = () => {
             <div className="mt-4">
                <h5>Existing Cards</h5>
                <div className="card-deck">
-                  {cards.map((card) => (
+                  {solution.map((card) => (
                      <div
-                        key={card.id}
+                        key={card._id}
                         className={`card ${
-                           selectedCard && selectedCard.id === card.id
+                           selectedCard && selectedCard._id === card._id
                               ? "border-primary"
                               : ""
                         } mb-4`}
-                        onClick={() => setSelectedCard(card)}
+                        onClick={() => selectCard(card.text, card.header, card)}
                      >
                         <div className="card-body">
                            <h5 className="card-title">{card.header}</h5>
