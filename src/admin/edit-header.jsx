@@ -1,26 +1,38 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { BsTrash } from "react-icons/bs";
 import { FaPlus } from "react-icons/fa";
+import { DataContext } from "../context/DataContext";
+import { post } from "../function/post";
 import AdminLayout from "./Layout";
 
 const EditHeader = () => {
-   const [newMenuItem, setNewMenuItem] = useState({ name: "", link: "" });
-   const [menuItems, setMenuItems] = useState([]);
+   const [title, setTitle] = useState("");
+   const [link, setLink] = useState("");
 
-   const handleInputChange = (e) => {
-      const { name, value } = e.target;
-      setNewMenuItem((prevItem) => ({ ...prevItem, [name]: value }));
+   const {
+      state: { header },
+      getData,
+   } = useContext(DataContext);
+
+   const createMenu = async () => {
+      try {
+         const data = { title, link };
+         console.log(data)
+         const response = await post("/header/post", data);
+         console.log(response);
+         getData()
+      } catch (error) {
+         console.log(error);
+      }
    };
-
-   const handleAddMenuItem = () => {
-      setMenuItems((prevMenuItems) => [...prevMenuItems, newMenuItem]);
-      setNewMenuItem({ name: "", link: "" });
-   };
-
-   const handleDeleteMenuItem = (index) => {
-      setMenuItems((prevMenuItems) =>
-         prevMenuItems.filter((item, i) => i !== index)
-      );
+   const deleteMenu = async (id) => {
+      try {
+         const data = { id };
+         const response = await post("/header/delete", data);
+         getData()
+      } catch (error) {
+         console.log(error);
+      }
    };
 
    return (
@@ -40,8 +52,10 @@ const EditHeader = () => {
                         id="menuName"
                         placeholder="Enter Menu Name"
                         name="name"
-                        value={newMenuItem.name}
-                        onChange={handleInputChange}
+                        value={title}
+                        onChange={(e) => {
+                           setTitle(e.target.value);
+                        }}
                      />
                   </div>
                   <div className="col-md-4 mb-3">
@@ -52,16 +66,21 @@ const EditHeader = () => {
                         id="menuLink"
                         placeholder="Enter Menu Link"
                         name="link"
-                        value={newMenuItem.link}
-                        onChange={handleInputChange}
+                        value={link}
+                        onChange={(e) => {
+                           setLink(e.target.value);
+                        }}
                      />
                   </div>
                   <div className="col-md-4 mb-3">
                      <button
                         className="btn bg-tblack text-light"
-                        onClick={handleAddMenuItem}
+                        onClick={createMenu}
                      >
-                        Add Menu <small><FaPlus className="mb-1"/></small>
+                        Add Menu{" "}
+                        <small>
+                           <FaPlus className="mb-1" />
+                        </small>
                      </button>
                   </div>
                </div>
@@ -69,24 +88,24 @@ const EditHeader = () => {
 
             {/* Display Existing Menu Items */}
             <div className="mt-5">
-               <h5>Existing Menu Items</h5>
+               <h5>Existing Menus</h5>
                <table className="table">
                   <thead>
                      <tr>
-                        <th>Menu Name</th>
-                        <th>Menu Link</th>
+                        <th>Title</th>
+                        <th>Link</th>
                         <th>Action</th>
                      </tr>
                   </thead>
                   <tbody>
-                     {menuItems.map((item, index) => (
+                     {header.map((item, index) => (
                         <tr key={index}>
-                           <td>{item.name}</td>
+                           <td>{item.title}</td>
                            <td>{item.link}</td>
                            <td>
                               <BsTrash
                                  className="text-danger"
-                                 onClick={() => handleDeleteMenuItem(index)}
+                                 onClick={() => deleteMenu(item._id)}
                               />
                            </td>
                         </tr>
