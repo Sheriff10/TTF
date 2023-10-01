@@ -4,11 +4,6 @@ import { post } from "../function/post";
 import AdminLayout from "./Layout";
 
 const EditSolution = () => {
-   const [cards, setCards] = useState([
-      { id: 1, header: "Card 1", text: "This is the content of Card 1" },
-      { id: 2, header: "Card 2", text: "This is the content of Card 2" },
-      // Add more initial cards as needed
-   ]);
 
    const {
       state: { solution },
@@ -20,7 +15,6 @@ const EditSolution = () => {
    const [text, setText] = useState("");
 
    const [selectedCard, setSelectedCard] = useState(null);
-   const [newCard, setNewCard] = useState({ header: "", text: "" });
 
    const addCard = async (query, data) => {
       try {
@@ -42,16 +36,6 @@ const EditSolution = () => {
       setHeader(cardHeader);
       setText(cardText);
       setSelectedCard(card);
-   };
-
-   const handleDeleteCard = () => {
-      if (selectedCard) {
-         setCards((prevCards) =>
-            prevCards.filter((card) => card.id !== selectedCard.id)
-         );
-         setSelectedCard(null);
-         setNewCard({ header: "", text: "" });
-      }
    };
 
    return (

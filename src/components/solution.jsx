@@ -1,33 +1,39 @@
-import React from "react";
-import {MdCheck, MdHighlightOff, MdRemoveRedEye} from 'react-icons/md'
+import React, { useContext } from "react";
+import { MdCheck, MdHighlightOff, MdRemoveRedEye } from "react-icons/md";
+import { DataContext } from "../context/DataContext";
 
 export default function Solution() {
+   const {
+      state: { solution },
+      dispatch,
+   } = useContext(DataContext);
+
+   const iconArr = [<MdHighlightOff />, <MdRemoveRedEye />, <MdCheck />];
+
    return (
       <div className="solutions">
          <div className="container px-5">
             <div className="row">
-               <div className="col-lg-4 col-md-6 p-lg-5 p-2">
-                  <div className="s-card">
-                     <div className="heading">
-                        <div className="wrap fw-bold fs-4 d-flex align-items-center p-3 bg-dark-blur mb-3 rounded">
-                           <span className="s-card-icon f"><MdHighlightOff /></span>{" "}
-                           <span className="t3 ms-1">Problems</span>
+               {solution.map((card, index) => (
+                  <div className="col-lg-4 col-md-6 p-lg-5 p-2">
+                     <div className="s-card">
+                        <div className="heading">
+                           <div className={`wrap fw-bold fs-4 d-flex align-items-center ${index === 0 && "bg-gray "} ${index === 1 && "bg-tblack "} ${index === 2 && "bg-red text-light"} p-3 mb-3 rounded`}>
+                              <span className="s-card-icon f">
+                                 {iconArr[index]}{" "}
+                              </span>{" "}
+                              <span className="t3 ms-1">{card.header}</span>
+                           </div>
+                        </div>
+
+                        <div className={`body  ${index === 0 && "bg-gray "}  ${index === 1 && "bg-tblack text-light"} ${index === 2 && "bg-red text-light"} p-3 rounded`}>
+                           {card.text}
                         </div>
                      </div>
-
-                     <div className="body bg-gray p-3 rounded">
-                        The most important thing to do when beginning to invest
-                        in cryptocurrencies is to practice safe trading. <br />{" "}
-                        <br />
-                        Trading cryptocurrency is a risky business but has the
-                        potential for high rewards.This attracts investors from
-                        all walks of life.But the reality is that only a
-                        fraction of investors end up in profit.
-                     </div>
                   </div>
-               </div>
+               ))}
 
-               {/* second card */}
+               {/* second card
                <div className="col-lg-4 col-md-6 p-lg-5 p-2">
                   <div className="s-card">
                      <div className="heading">
@@ -49,7 +55,7 @@ export default function Solution() {
                   </div>
                </div>
 
-               {/* 3rd Card */}
+               {/* 3rd Card 
                <div className="col-lg-4 col-md-6 p-lg-5 p-2">
                   <div className="s-card">
                      <div className="heading">
@@ -69,7 +75,7 @@ export default function Solution() {
                         fraction of investors end up in profit.
                      </div>
                   </div>
-               </div>
+               </div> */}
             </div>
          </div>
       </div>

@@ -58,25 +58,3 @@
       clip-path: polygon(100% 0, 100% 74%, 53% 100%, 0 74%, 0 0, 51% 0);
    }
 }
-.mover{
-   display: flex;
-   overflow: scroll;
-}
-
-.img-wrap {
-   flex-shrink: 0;
- }
- 
- @keyframes moveLeft {
-   0% {
-     transform: translateX(0);
-   }
-   100% {
-     transform: translateX(-100%);
-   }
- }
- 
- /* Adjust the animation duration as needed */
- .mover  {
-   animation: moveLeft 10s linear infinite; 
- }

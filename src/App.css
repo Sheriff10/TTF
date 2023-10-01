@@ -62,3 +62,6 @@ a {
 a.active {
    background: #ba3b46 !important;
 }
+.bg-red.text-light .t3{
+   color: #fff !important;
+}
