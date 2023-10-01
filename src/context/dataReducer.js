@@ -3,8 +3,8 @@ export const INITIAL_DATA_STATE = {
       // arry of objects {title and link}
    ],
    intro: {
-      intro_title: "",
-      intro_slogan: "",
+      intro_title: "ghjkl",
+      intro_slogan: "ki",
       intro_img: "",
    },
    about: {

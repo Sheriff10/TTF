@@ -1,10 +1,38 @@
-import React from "react";
-import { FaImage, FaTelegram, FaTelegramPlane } from "react-icons/fa";
+import axios from "axios";
+import React, { useContext, useEffect, useState } from "react";
+import { FaImage, FaTelegramPlane } from "react-icons/fa";
+import { DataContext } from "../context/DataContext";
+import { post } from "../function/post";
 import AdminLayout from "./Layout";
 
 export default function EditIntro() {
-   const about01 =
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit repudiandae id obcaecati ipsa, reiciendis blanditiis facilis temporibus repellendus possimus labore libero at mollitia beatae quam nihil eligendi aspernatur aut voluptatem.";
+   const {
+      state: { intro },
+      getData,
+   } = useContext(DataContext);
+   useEffect(() => {
+      setIntro_title(intro.intro_title);
+      setIntro_slogan(intro.intro_slogan);
+   }, [intro]);
+   const [intro_title, setIntro_title] = useState("");
+   const [intro_slogan, setIntro_slogan] = useState("");
+
+   const update = async (introQuery, data, type) => {
+      try {
+         const id = intro._id
+         console.log(id)
+         const postData =
+            type === "title"
+               ? { intro_title: data, id }
+               : { intro_slogan: data, id };
+         const response = await post(`/intro/${introQuery}`, postData);
+         console.log(response);
+         getData();
+      } catch (error) {
+         console.log(error);
+      }
+   };
+
    return (
       <AdminLayout>
          <div className="container mt-3">
@@ -23,13 +51,19 @@ export default function EditIntro() {
                            className="form-control"
                            id="menuName"
                            placeholder="Enter Menu Name"
-                           value={about01}
+                           value={intro_title}
+                           onChange={(e) => setIntro_title(e.target.value)}
                            rows={4}
                            name="name"
                         />
                         <div className="col mt-3">
-                           <button className="btn bg-tblack btn-sm text-light">
-                              Update Title{" "}
+                           <button
+                              className="btn bg-tblack btn-sm text-light"
+                              onClick={() =>
+                                 update("intro-title", intro_title, "title")
+                              }
+                           >
+                              Update Title
                               <small>
                                  <FaTelegramPlane className="mb-1" />
                               </small>
@@ -49,12 +83,18 @@ export default function EditIntro() {
                            className="form-control"
                            id="menuName"
                            placeholder="Enter Menu Name"
-                           value={about01}
+                           value={intro_slogan}
+                           onChange={(e) => setIntro_slogan(e.target.value)}
                            rows={4}
                            name="name"
                         />
                         <div className="col mt-3">
-                           <button className="btn btn-sm bg-tblack text-light">
+                           <button
+                              className="btn btn-sm bg-tblack text-light"
+                              onClick={() =>
+                                 update("intro-slogan", intro_slogan)
+                              }
+                           >
                               Update Slogan{" "}
                               <small>
                                  <FaTelegramPlane className="mb-1" />
