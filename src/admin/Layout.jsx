@@ -20,6 +20,7 @@ const AdminLayout = ({ children }) => {
       menuFunc("Intro", "/admin/edit-intro"),
       menuFunc("About", "/admin/edit-about"),
       menuFunc("Solution", "/admin/edit-solution"),
+      menuFunc("Roadmap", "/admin/edit-roadmap"),
       menuFunc("Partners", "/admin/edit-partners"),
    ];
 
@@ -52,7 +53,7 @@ const AdminLayout = ({ children }) => {
                   <FaBars />
                </button>
             </div>
-            <div className="wrap">{children}</div>
+            <div className="wrap p-5">{children}</div>
 
          </div>
       </div>

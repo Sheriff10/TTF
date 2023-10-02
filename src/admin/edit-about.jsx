@@ -34,7 +34,7 @@ export default function EditAbout() {
 
    return (
       <AdminLayout>
-         <div className="container mt-3">
+         <div className="container">
             <h2>Edit About Content</h2>
 
             {/* About 01 */}

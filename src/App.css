@@ -86,3 +86,10 @@ padding-bottom: 18px;
 .r-card li {
    color: #767676;
 }
+
+.btn.bg-red:hover {
+   background: #8d2c34 !important;
+}
+.btn.bg-tblack:hover {
+   background: #1d2b3a !important;
+}

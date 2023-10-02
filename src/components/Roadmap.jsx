@@ -6,8 +6,8 @@ export default function Roadmap() {
       state: { roadmap },
    } = useContext(DataContext);
    return (
-      <div className="roadmap bg-tblack py-5 text-light">
-         <div className="container px-lg-5">
+      <div className="roadmap bg-tblack py-5 p-5 text-light">
+         <div className="container">
             <div className="header py-5">
                <small>Our Detailed Plan</small> <br />
                <span className="fw-bold fs-1">TTF Roadmap</span>
@@ -16,7 +16,7 @@ export default function Roadmap() {
          <div className="container">
             <div className="row">
                {roadmap.map((rCard, index) => (
-                  <div className="col-lg-3 col-md-6 col-12" key={index}>
+                  <div className="col-lg-3 col-md-6 col-12 mb-4 " key={index}>
                      <div className="r-card bg-dark-blur p-4 h-100">
                         <div className="head flex mb-2">
                            <span className="fw-bold fs-4">{index+1}</span>

@@ -47,7 +47,7 @@ const EditPartners = () => {
    };
    return (
       <AdminLayout>
-         <div className="container mt-5">
+         <div className="container">
             <h2>Partner Image Editor</h2>
 
             {/* Partner Image Form */}

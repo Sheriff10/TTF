@@ -37,7 +37,7 @@ const EditHeader = () => {
 
    return (
       <AdminLayout>
-         <div className="container mt-2">
+         <div className="container">
             <h2 className="text-red">Edit Header Menu</h2>
 
             {/* Add New Menu Item */}

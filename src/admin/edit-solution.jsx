@@ -40,7 +40,7 @@ const EditSolution = () => {
 
    return (
       <AdminLayout>
-         <div className="container mt-5 px-5">
+         <div className="container">
             <h2>Edit Solution</h2>
 
             {/* Card Form */}
