@@ -65,3 +65,24 @@ a.active {
 .bg-red.text-light .t3{
    color: #fff !important;
 }
+.r-card {
+   border-radius: 20px 0px 20px 0px;
+   border-top: 2px solid #ba3b46;
+   border-bottom: 2px solid #ba3b46;
+}
+.r-card .head {
+border-bottom: 1px solid #ba3b46;
+padding-bottom: 18px;
+}
+.r-card .head span{
+   background: #ba3b46;
+   padding: 5px 15px;
+   border-radius: 50%;
+}
+.er .r-card .head span {
+   padding:  5px 7px;
+   font-size: 16px !important;
+}
+.r-card li {
+   color: #767676;
+}

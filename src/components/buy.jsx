@@ -17,7 +17,7 @@ export default function Buy() {
             {/* img display */}
             <div className="row align-items-center bg-dark-blur rounded-pill mt-2 shadow">
                {imgArr.map((i) => (
-                  <div className="col d-flex justify-content-center align-items-center  p-3">
+                  <div className="col d-flex justify-content-center align-items-center  p-3" key={i}>
                      <img src={i} alt={i} />
                   </div>
                ))}

@@ -3,20 +3,9 @@ import { DataContext } from "../context/DataContext";
 import Marquee from "react-fast-marquee";
 
 export default function Partners() {
-   const imgArr = [
-      "/PancakeSwap1.png",
-      "/dexscreener1.png",
-      "/PooCoin-Logo.png",
-      "/dextools.png",
-      "/dextools.png",
-      "/dextools.png",
-      "/dextools.png",
-      "/dextools.png",
-   ];
 
    const {
       state: { partners },
-      dispatch,
    } = useContext(DataContext);
    return (
       <div className="partners bg-gray py-2">
@@ -27,8 +16,8 @@ export default function Partners() {
             </div>
             <Marquee className="bg-gray">
                <div className="d-flex gap-1 justify-content-between align-items-center">
-                  {partners.map((partnerImage) => (
-                     <div className="img-wrap">
+                  {partners.map((partnerImage, index) => (
+                     <div className="img-wrap" key={index}>
                         <img
                            src={partnerImage.img}
                            alt="TTF Partner"

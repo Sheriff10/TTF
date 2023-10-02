@@ -6,7 +6,6 @@ import DOMPurify from "dompurify";
 export default function About() {
    const {
       state: { about },
-      dispatch,
    } = useContext(DataContext);
    const sanitizedContent = DOMPurify.sanitize(about.about01);
    const sanitizedContent2 = DOMPurify.sanitize(about.about02);

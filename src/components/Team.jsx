@@ -32,7 +32,7 @@ export default function Team() {
             </div>
             <div className="row t-card">
                 {teamArr.map((i, index) => (
-                    <div className="col-6 col-lg-3 p-lg-5 mb-4">
+                    <div className="col-6 col-lg-3 p-lg-5 mb-4" key={index}>
                         <div className="box shadow">
                             <div className="box-img d-flex justify-content-center">
                                 <img src={i.img} alt={i.name} width={100} />

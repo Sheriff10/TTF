@@ -3,7 +3,6 @@ import { DataContext } from "../context/DataContext";
 export default function Intro() {
    const {
       state: { intro },
-      dispatch,
    } = useContext(DataContext);
 
    return (

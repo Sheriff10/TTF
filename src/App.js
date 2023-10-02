@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import "./header.css";
 import Page from "./page";
@@ -9,6 +8,7 @@ import EditIntro from "./admin/edit-intro";
 import EditSolution from "./admin/edit-solution";
 import EditPartners from "./admin/partners";
 import DataContextWrap from "./context/DataContext";
+import EditRoadmap from "./admin/edit-roadmap";
 
 function App() {
    window.api = 'http://localhost:5000'
@@ -28,6 +28,8 @@ function App() {
                   path={"/admin/edit-partners"}
                   element={<EditPartners />}
                />
+               <Route path={"/admin/edit-roadmap"} element={<EditRoadmap />} />
+
             </Routes>
          </DataContextWrap>
       </div>

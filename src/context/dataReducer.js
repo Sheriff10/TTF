@@ -17,6 +17,9 @@ export const INITIAL_DATA_STATE = {
    partners: [
       // array of img links
    ],
+   roadmap: [
+      // arrays of roadmap list
+   ],
 };
 
 export const DataReducer = (state, action) => {

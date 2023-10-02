@@ -12,7 +12,6 @@ const Header = () => {
 
    const {
       state: { header },
-      dispatch,
    } = useContext(DataContext);
 
    return (
@@ -31,7 +30,7 @@ const Header = () => {
                   <div className="menu-con">
                      <ul className="gap-3">
                         {header.map((menu) => (
-                           <li>
+                           <li key={menu._id}>
                               <a href={menu.link}>{menu.title}</a>
                            </li>
                         ))}

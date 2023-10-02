@@ -5,7 +5,6 @@ import { DataContext } from "../context/DataContext";
 export default function Solution() {
    const {
       state: { solution },
-      dispatch,
    } = useContext(DataContext);
 
    const iconArr = [<MdHighlightOff />, <MdRemoveRedEye />, <MdCheck />];
@@ -15,7 +14,7 @@ export default function Solution() {
          <div className="container px-5">
             <div className="row">
                {solution.map((card, index) => (
-                  <div className="col-lg-4 col-md-6 p-lg-5 p-2">
+                  <div className="col-lg-4 col-md-6 p-lg-5 p-2" key={index}>
                      <div className="s-card">
                         <div className="heading">
                            <div className={`wrap fw-bold fs-4 d-flex align-items-center ${index === 0 && "bg-gray "} ${index === 1 && "bg-tblack "} ${index === 2 && "bg-red text-light"} p-3 mb-3 rounded`}>
