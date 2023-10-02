@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { BsTrash } from "react-icons/bs";
+import { ScaleLoader } from "react-spinners";
 import { DataContext } from "../context/DataContext";
 import { post } from "../function/post";
 import AdminLayout from "./Layout";
@@ -14,6 +15,8 @@ const EditRoadmap = () => {
       title: "",
       theories: [""],
    });
+   const [loading, setLoading] = useState(false);
+
 
    const handleInputChange = (e) => {
       const { name, value } = e.target;
@@ -40,11 +43,14 @@ const EditRoadmap = () => {
       console.log(newRoadmap);
 
       try {
+        setLoading(true)
          const response = await post(`/roadmap/${query}`, data);
          console.log(response);
          getData();
+         setLoading(false)
       } catch (error) {
          console.log(error);
+         setLoading(false)
       }
    };
 
@@ -101,7 +107,12 @@ const EditRoadmap = () => {
                      handleCreateRoadmap("post", { list: newRoadmap.theories })
                   }
                >
-                  Create Roadmap
+                  Create Roadmap <ScaleLoader
+                           loading={loading}
+                           height={10}
+                           width={1}
+                           color={"#fff"}
+                        />
                </button>
             </div>
 

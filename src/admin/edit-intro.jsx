@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { FaImage, FaTelegramPlane } from "react-icons/fa";
+import { ScaleLoader } from "react-spinners";
 import { DataContext } from "../context/DataContext";
 import { post } from "../function/post";
 import AdminLayout from "./Layout";
@@ -15,9 +16,12 @@ export default function EditIntro() {
    }, [intro]);
    const [intro_title, setIntro_title] = useState("");
    const [intro_slogan, setIntro_slogan] = useState("");
+   const [loading, setLoading] = useState(false);
+
 
    const update = async (introQuery, data, type) => {
       try {
+         setLoading(true)
          const id = intro._id
          console.log(id)
          const postData =
@@ -27,8 +31,11 @@ export default function EditIntro() {
          const response = await post(`/intro/${introQuery}`, postData);
          console.log(response);
          getData();
+         setLoading(false)
       } catch (error) {
          console.log(error);
+         setLoading(false)
+         alert("An error occured")
       }
    };
 
@@ -66,6 +73,12 @@ export default function EditIntro() {
                               <small>
                                  <FaTelegramPlane className="mb-1" />
                               </small>
+                              <ScaleLoader
+                                 loading={loading}
+                                 height={10}
+                                 width={1}
+                                 color={"#fff"}
+                              />
                            </button>
                         </div>
                      </div>
@@ -98,6 +111,12 @@ export default function EditIntro() {
                               <small>
                                  <FaTelegramPlane className="mb-1" />
                               </small>
+                              <ScaleLoader
+                                 loading={loading}
+                                 height={10}
+                                 width={1}
+                                 color={"#fff"}
+                              />
                            </button>
                         </div>
                      </div>

@@ -93,3 +93,7 @@ padding-bottom: 18px;
 .btn.bg-tblack:hover {
    background: #1d2b3a !important;
 }
+.login {
+   height: 100dvh;
+   background: #131b23;
+}

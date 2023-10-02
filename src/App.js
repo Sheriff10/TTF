@@ -9,6 +9,7 @@ import EditSolution from "./admin/edit-solution";
 import EditPartners from "./admin/partners";
 import DataContextWrap from "./context/DataContext";
 import EditRoadmap from "./admin/edit-roadmap";
+import Login from "./admin/login";
 
 function App() {
    window.api = 'http://localhost:5000'
@@ -29,6 +30,7 @@ function App() {
                   element={<EditPartners />}
                />
                <Route path={"/admin/edit-roadmap"} element={<EditRoadmap />} />
+               <Route path={"/admin/login"} element={<Login />} />
 
             </Routes>
          </DataContextWrap>

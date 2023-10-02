@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
+import { ScaleLoader } from "react-spinners";
 import { DataContext } from "../context/DataContext";
 import { post } from "../function/post";
 import AdminLayout from "./Layout";
 
 const EditSolution = () => {
-
    const {
       state: { solution },
       getData,
@@ -15,22 +15,26 @@ const EditSolution = () => {
    const [text, setText] = useState("");
 
    const [selectedCard, setSelectedCard] = useState(null);
+   const [loading, setLoading] = useState(false);
 
    const addCard = async (query, data) => {
       try {
+         setLoading(true);
          const response = await post(`/solution/${query}`, data);
          console.log(response);
-         resetFields()
+         resetFields();
          getData();
+         setLoading(false);
       } catch (error) {
          console.log(error);
+         setLoading(false);
       }
    };
    const resetFields = () => {
-      setHeader('');
-      setText('');
+      setHeader("");
+      setText("");
       setSelectedCard(null);
-   }
+   };
 
    const selectCard = (cardText, cardHeader, card) => {
       setHeader(cardHeader);
@@ -83,6 +87,12 @@ const EditSolution = () => {
                         }
                      >
                         Edit Card
+                        <ScaleLoader
+                           loading={loading}
+                           height={10}
+                           width={1}
+                           color={"#fff"}
+                        />
                      </button>
                   ) : (
                      <button
@@ -91,15 +101,29 @@ const EditSolution = () => {
                         onClick={() => addCard("post", { header, text })}
                      >
                         Add Card
+                        <ScaleLoader
+                           loading={loading}
+                           height={10}
+                           width={1}
+                           color={"#fff"}
+                        />
                      </button>
                   )}
                   {selectedCard && (
                      <button
                         type="button"
                         className="btn btn-danger"
-                        onClick={() => addCard('delete', {id: selectedCard._id})}
+                        onClick={() =>
+                           addCard("delete", { id: selectedCard._id })
+                        }
                      >
                         Delete Card
+                        <ScaleLoader
+                           loading={loading}
+                           height={10}
+                           width={1}
+                           color={"#fff"}
+                        />
                      </button>
                   )}
                </form>

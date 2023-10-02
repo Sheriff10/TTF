@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import { getToken } from "../function/post";
 // import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 // import './YourComponent.css'; // You can create a CSS file for custom styling
 
 const AdminLayout = ({ children }) => {
    const [isOpen, setIsOpen] = useState(false);
+
+   useEffect(() => {
+      getToken();
+   }, []);
 
    const toggleMenu = () => {
       setIsOpen(!isOpen);
@@ -49,12 +54,14 @@ const AdminLayout = ({ children }) => {
          {/* Page Content */}
          <div className="col">
             <div className="btn-wrap col-12 bg-dark">
-               <button className="btn bg-red text-white m-2" onClick={toggleMenu}>
+               <button
+                  className="btn bg-red text-white m-2"
+                  onClick={toggleMenu}
+               >
                   <FaBars />
                </button>
             </div>
             <div className="wrap p-5">{children}</div>
-
          </div>
       </div>
    );

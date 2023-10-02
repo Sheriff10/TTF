@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { BsTrash } from "react-icons/bs";
 import { FaPlus } from "react-icons/fa";
+import { ScaleLoader } from "react-spinners";
 import { DataContext } from "../context/DataContext";
 import { post } from "../function/post";
 import AdminLayout from "./Layout";
@@ -8,6 +9,7 @@ import AdminLayout from "./Layout";
 const EditHeader = () => {
    const [title, setTitle] = useState("");
    const [link, setLink] = useState("");
+   const [loading, setLoading] = useState(false);
 
    const {
       state: { header },
@@ -15,22 +17,28 @@ const EditHeader = () => {
    } = useContext(DataContext);
 
    const createMenu = async () => {
+      setLoading(true);
       try {
          const data = { title, link };
-         console.log(data)
+         console.log(data);
          const response = await post("/header/post", data);
          console.log(response);
-         getData()
+         getData();
+         setLoading(false);
       } catch (error) {
+         setLoading(false);
          console.log(error);
       }
    };
    const deleteMenu = async (id) => {
       try {
+         setLoading(true)
          const data = { id };
          await post("/header/delete", data);
-         getData()
+         getData();
+         setLoading(false)
       } catch (error) {
+         setLoading(false)
          console.log(error);
       }
    };
@@ -81,6 +89,12 @@ const EditHeader = () => {
                         <small>
                            <FaPlus className="mb-1" />
                         </small>
+                        <ScaleLoader
+                           loading={loading}
+                           height={10}
+                           width={1}
+                           color={"#fff"}
+                        />
                      </button>
                   </div>
                </div>
@@ -102,10 +116,16 @@ const EditHeader = () => {
                         <tr key={index}>
                            <td>{item.title}</td>
                            <td>{item.link}</td>
-                           <td>
+                           <td className="d-flex">
                               <BsTrash
                                  className="text-danger"
                                  onClick={() => deleteMenu(item._id)}
+                              />
+                              <ScaleLoader
+                                 loading={loading}
+                                 height={10}
+                                 width={1}
+                                 color={"#000"}
                               />
                            </td>
                         </tr>

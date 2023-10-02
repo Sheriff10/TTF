@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { FaTelegramPlane } from "react-icons/fa";
+import { ScaleLoader } from "react-spinners";
 import { DataContext } from "../context/DataContext";
 import { post } from "../function/post";
 import AdminLayout from "./Layout";
@@ -17,18 +18,22 @@ export default function EditAbout() {
 
    const [about01, setAbout01] = useState("");
    const [about02, setAbout02] = useState("");
+   const [loading, setLoading] = useState(false);
 
    const update = async (query, data) => {
+      setLoading(true);
       const postData =
          query === "about01"
             ? { about01: data, id: about._id }
             : { about02: data, id: about._id };
       try {
          const response = await post(`/about/${query}`, postData);
-         console.log(response)
+         console.log(response);
          getData();
+         setLoading(false);
       } catch (error) {
          console.log(error);
+         setLoading(false);
       }
    };
 
@@ -55,11 +60,20 @@ export default function EditAbout() {
                         name="name"
                      />
                      <div className=" mt-3">
-                        <button className="btn bg-tblack text-light" onClick={() => update('about01', about01)}>
+                        <button
+                           className="btn bg-tblack text-light"
+                           onClick={() => update("about01", about01)}
+                        >
                            Update About{" "}
                            <small>
                               <FaTelegramPlane className="mb-1" />
                            </small>
+                           <ScaleLoader
+                              loading={loading}
+                              height={10}
+                              width={1}
+                              color={"#fff"}
+                           />
                         </button>
                      </div>
                   </div>
@@ -82,11 +96,20 @@ export default function EditAbout() {
                         name="name"
                      />
                      <div className=" mt-3">
-                        <button className="btn bg-tblack text-light" onClick={() => update('about02', about02)}>
+                        <button
+                           className="btn bg-tblack text-light"
+                           onClick={() => update("about02", about02)}
+                        >
                            Update About{" "}
                            <small>
                               <FaTelegramPlane className="mb-1" />
                            </small>
+                           <ScaleLoader
+                              loading={loading}
+                              height={10}
+                              width={1}
+                              color={"#fff"}
+                           />
                         </button>
                      </div>
                   </div>

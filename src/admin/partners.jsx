@@ -1,11 +1,12 @@
 import axios from "axios";
 import React, { useContext, useRef, useState } from "react";
 import { FaImage, FaUpload } from "react-icons/fa";
+import { ScaleLoader } from "react-spinners";
 import { DataContext } from "../context/DataContext";
+import { getToken } from "../function/post";
 import AdminLayout from "./Layout";
 
 const EditPartners = () => {
-
    const {
       state: { partners },
       getData,
@@ -13,6 +14,7 @@ const EditPartners = () => {
 
    const [image, setImage] = useState("");
    const [viewImage, setViewImage] = useState(null);
+   const [loading, setLoading] = useState(false);
 
    const fileRef = useRef(null);
 
@@ -29,20 +31,23 @@ const EditPartners = () => {
 
    const uploadImage = async (query, data) => {
       try {
-         // const data = { Image: image };
+         setLoading(true);
          const response = await axios.post(
             `${window.api}/partners/${query}`,
             data,
             {
                headers: {
+                  "auth-pass": getToken(),
                   "Content-Type": "multipart/form-data",
                },
             }
          );
          console.log(response);
          getData();
+         setLoading(false);
       } catch (error) {
          console.log(error);
+         setLoading(false);
       }
    };
    return (
@@ -120,6 +125,12 @@ const EditPartners = () => {
                                  }
                               >
                                  Upload Image <FaUpload />{" "}
+                                 <ScaleLoader
+                                    loading={loading}
+                                    height={10}
+                                    width={1}
+                                    color={"#fff"}
+                                 />
                               </button>
                            </div>
                         </div>
@@ -151,6 +162,12 @@ const EditPartners = () => {
                                  }
                               >
                                  Delete
+                                 <ScaleLoader
+                                    loading={loading}
+                                    height={10}
+                                    width={1}
+                                    color={"#fff"}
+                                 />
                               </button>
                            </div>
                         </div>
