@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { FaImage, FaTelegramPlane } from "react-icons/fa";
 import { DataContext } from "../context/DataContext";

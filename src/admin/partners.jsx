@@ -5,24 +5,6 @@ import { DataContext } from "../context/DataContext";
 import AdminLayout from "./Layout";
 
 const EditPartners = () => {
-   const [partnerImages, setPartnerImages] = useState([]);
-   const [newImageURL, setNewImageURL] = useState("");
-
-   const handleAddPartnerImage = () => {
-      if (newImageURL.trim() !== "") {
-         setPartnerImages([
-            ...partnerImages,
-            { id: Date.now(), imageUrl: newImageURL },
-         ]);
-         setNewImageURL("");
-      }
-   };
-
-   const handleDeletePartnerImage = (id) => {
-      setPartnerImages((prevImages) =>
-         prevImages.filter((image) => image.id !== id)
-      );
-   };
 
    const {
       state: { partners },
@@ -124,7 +106,7 @@ const EditPartners = () => {
                         <div className="img-wrap">
                            <img
                               src={viewImage}
-                              alt="Partner Image"
+                              alt="Partner"
                               className="img-fluid"
                            />
 

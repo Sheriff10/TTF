@@ -13,7 +13,7 @@ export default function EditAbout() {
    useEffect(() => {
       setAbout01(about.about01);
       setAbout02(about.about02);
-   }, []);
+   }, [about.about01, about.about02]);
 
    const [about01, setAbout01] = useState("");
    const [about02, setAbout02] = useState("");

@@ -28,7 +28,7 @@ const EditHeader = () => {
    const deleteMenu = async (id) => {
       try {
          const data = { id };
-         const response = await post("/header/delete", data);
+         await post("/header/delete", data);
          getData()
       } catch (error) {
          console.log(error);
