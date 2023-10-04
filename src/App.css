@@ -97,3 +97,10 @@ padding-bottom: 18px;
    height: 100dvh;
    background: #131b23;
 }
+/* Loader  */
+.loader {
+   z-index: 100;
+}
+.loader img {
+   width: 150px;
+}
