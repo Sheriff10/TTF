@@ -3,7 +3,7 @@ import { FaCheck } from "react-icons/fa";
 
 export default function Bots() {
    return (
-      <div className="bots py-5 bg-gray">
+      <div className="bots py-5 bg-gray" id="version">
          <div className="container px-5">
             <div className="header py-5">
                <small>What we offer</small> <br />

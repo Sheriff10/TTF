@@ -12,7 +12,7 @@ export default function Team() {
         teamFunc("Dan kuma", '/t1.jpeg', "CEO & Accountant", '/'),
     ]
    return (
-      <div className="team py-5">
+      <div className="team py-5" id="team">
          <div className="container px-5">
             <div className="header">
                <small>The HardWorking Members</small>

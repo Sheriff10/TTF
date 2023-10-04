@@ -12,7 +12,7 @@ export default function About() {
 
    const [readMore, setReadMore] = useState(false);
    return (
-      <div className="about bg-tblack text-gray py-5">
+      <div className="about bg-tblack text-gray py-5" id="about">
          <div className="container px-5">
             <div className="header fw-bold">
                <small className="t3">Introuction</small>

@@ -8,7 +8,7 @@ export default function Tokenomics() {
       { x: "3%", y: 3 },
    ];
    return (
-      <div className="tk bg-dark-blur ">
+      <div className="tk bg-dark-blur " id="tokenomics">
          <div className="container px-lg-5 p-5 ">
             <div className="header py-5">
                 <small>Our Economic Value</small> <br />

@@ -15,13 +15,13 @@ export default function Partners() {
                <span className="fs-2 fw-bold">Partners</span>
             </div>
             <Marquee className="bg-gray">
-               <div className="d-flex gap-1 justify-content-between align-items-center">
+               <div className="d-flex gap-5 justify-content-between align-items-center">
                   {partners.map((partnerImage, index) => (
                      <div className="img-wrap" key={index}>
                         <img
                            src={partnerImage.img}
                            alt="TTF Partner"
-                           width={400}
+                           width={150}
                            className={"img-fluid"}
                         />
                      </div>

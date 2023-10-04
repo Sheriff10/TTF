@@ -104,3 +104,8 @@ padding-bottom: 18px;
 .loader img {
    width: 150px;
 }
+.solutions .s-card {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}

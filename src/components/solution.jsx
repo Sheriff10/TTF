@@ -12,10 +12,10 @@ export default function Solution() {
    return (
       <div className="solutions">
          <div className="container px-5">
-            <div className="row">
+            <div className="row bg-dar">
                {solution.map((card, index) => (
                   <div className="col-lg-4 col-md-6 p-lg-5 p-2" key={index}>
-                     <div className="s-card">
+                     <div className="s-card h-100 bg-dange">
                         <div className="heading">
                            <div className={`wrap fw-bold fs-4 d-flex align-items-center ${index === 0 && "bg-gray "} ${index === 1 && "bg-tblack "} ${index === 2 && "bg-red text-light"} p-3 mb-3 rounded`}>
                               <span className="s-card-icon f">

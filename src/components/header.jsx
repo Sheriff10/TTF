@@ -38,7 +38,7 @@ const Header = () => {
                   </div>
                   <div className="btn-wrap">
                      <a href="#" download>
-                        <div className="btn btn-light">whitepaper</div>
+                        <div className="btn btn-light rounded-pill fw-bold px-3">Try TTF BOT</div>
                      </a>
                   </div>
                   <div className="menu-btn" onClick={toggleMenu}>
