@@ -11,7 +11,7 @@ export default function Footer() {
                   Copyright © 2023 - All right reserved for TrackTheFunds Bot
                </small>
             </div>
-            <div className="socials">
+            <div className="socials px-3">
                 <FaTwitter /> <FaTelegram />
             </div>
          </div>

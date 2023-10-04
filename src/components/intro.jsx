@@ -6,9 +6,9 @@ export default function Intro() {
    } = useContext(DataContext);
 
    return (
-      <div className="intro">
-         <div className="container px-5">
-            <div className="row align-items-center bg-dar">
+      <div className="intro h-100 mt-5">
+         <div className="container h-100 px-5">
+            <div className="row h-100 align-items-center bg-dar">
                <div className="col-lg-6">
                   <div className="intro-text">
                      <div className="text-wrap">

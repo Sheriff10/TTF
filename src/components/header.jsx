@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { FaArrowUp } from "react-icons/fa";
 import { DataContext } from "../context/DataContext";
 
 // import pdf from '../../public/TRIADDAO_whitepaper.pdf'
@@ -38,7 +39,9 @@ const Header = () => {
                   </div>
                   <div className="btn-wrap">
                      <a href="#" download>
-                        <div className="btn btn-light rounded-pill fw-bold px-3">Try TTF BOT</div>
+                        <div className="btn btn-light rounded-pill fw-bold px-3">
+                           Try TTF BOT
+                        </div>
                      </a>
                   </div>
                   <div className="menu-btn" onClick={toggleMenu}>
@@ -47,6 +50,21 @@ const Header = () => {
                </div>
             </div>
          </header>
+         <div className="float-btn position-fixed bottom-0 end-0 m-3">
+            <button className="btn btn-dark rounded-pill px-3">
+               <a href="#">
+                  <img
+                     src="https://pbs.twimg.com/profile_images/1638613862042992640/HYzR9L9j_400x400.jpg"
+                     alt="TTF"
+                     className="rounded-circle"
+                     width={30}
+                  />{" "}
+                  <span>
+                     <FaArrowUp />
+                  </span>
+               </a>
+            </button>
+         </div>
       </>
    );
 };

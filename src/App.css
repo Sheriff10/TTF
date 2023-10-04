@@ -7,7 +7,7 @@ a {
 }
 
 .h-i-wrap {
-   /* min-height: 90vh; */
+   min-height: 70vh;
    background: linear-gradient(45deg, #131b23 40%, #ba3b46);
 }
 .bg-red {
@@ -108,4 +108,7 @@ padding-bottom: 18px;
    display: flex;
    flex-direction: column;
    justify-content: space-between;
+}
+.float-btn {
+   z-index: 80;
 }
