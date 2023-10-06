@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+#root body, #root h1, #root p, #root span, #root small, #root button, #root small, #root li{
+   font-family: 'Nunito', sans-serif;
+}
+
 .heading .row {
    background: #ffffff69;
    backdrop-filter: blur(10px);
@@ -35,15 +41,15 @@
       font-size: 40px;
    }
    .intro {
-      background: url('/public/TTFgif.gif') no-repeat;
-      background-size: cover; /* Optional: adjust this property based on your needs */
-      background-position: center; /* This centers the background image */
+      /* background: url('/public/TTFgif.gif') no-repeat;
+      background-size: cover; 
+      background-position: center; */
   }
   .intro .row{
-   min-height: 0vh;
+   min-height: 70vh;
   }
-  .intro .container {
-   backdrop-filter: blur(15px);
+  .intro .bg-wrap {
+   /* background: #02020294; */
    padding: 20px;
   }
   

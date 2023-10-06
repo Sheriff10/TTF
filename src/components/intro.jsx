@@ -6,26 +6,30 @@ export default function Intro() {
    } = useContext(DataContext);
 
    return (
-      <div className="intro h-100 mt-5">
-         <div className="container h-100 px-5">
+      <div className="intro ">
+         <div className="bg-wrap h-100 pt-5">
+         <div className="container h-100 px-3">
             <div className="row h-100 align-items-center bg-dar">
                <div className="col-lg-6">
                   <div className="intro-text">
                      <div className="text-wrap">
+                        <div className="text-wrap">
+                        <span className="badge bg-dark text-purple fw-bold">TTF Token</span>
+                        </div>
                         <h1 className="t fw-boold">{intro.intro_title}</h1>
                      </div>
-                     <div className="text-wrap d-flex">
+                     {/* <div className="text-wrap d-flex">
                         <div className="wrap blur-bg p-2 px-4 rounded-pill ">
-                           <span className="t3 fw-bold">Track</span>{" "}
+                           <span className="t3 text-purple fw-bold">Track</span>{" "}
                            <span className="t2 fw-bold">The</span>{" "}
                            <span className="t3 fw-bold">Fund</span>
                         </div>
-                     </div>
+                     </div> */}
                      <p className="text-gray">{intro.intro_slogan}</p>
 
                      <div className="btn-wrap d-flex gap-2 ">
                         <div className="col">
-                           <button className="btn bg-red text-white rounded h-100 col-12 p-lg-2 ">
+                           <button className="btn bg-purple text-white rounded h-100 col-12 p-lg-2 ">
                               Read Whitepaper
                            </button>
                         </div>
@@ -45,6 +49,7 @@ export default function Intro() {
                   </div>
                </div>
             </div>
+         </div>
          </div>
       </div>
    );

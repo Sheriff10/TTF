@@ -1,3 +1,28 @@
+body {
+   background: #191919;
+}
+.bg-purple {
+   background: #5916f3;
+}
+.text-purple {
+   color: #5916f3;
+}
+.btn {
+   border-radius: 20px 0px 20px 0px !important;
+}
+.text-gray {
+   color: #9f9f9f;
+}
+.bg-gray{
+   background: #9f9f9f;
+}
+.bg-tblack {
+   background: #222;
+}
+.bg-tblack2 {
+   background: #191919;
+}
+
 li {
    list-style-type: none;
 }
@@ -6,9 +31,14 @@ a {
    color: #e2e2e2;
 }
 
+
+/* PAGES  */
+
 .h-i-wrap {
    min-height: 70vh;
-   background: linear-gradient(45deg, #131b23 40%, #ba3b46);
+   /* background: linear-gradient(45deg, #131b23 40%, #ba3b46); */
+   background: #191919;
+
 }
 .bg-red {
    background: #ba3b46;
@@ -22,20 +52,16 @@ a {
 /* .bg-outline {
   background: #ba3b46;
 } */
-.text-gray {
-   color: #d3d3d3;
-}
+
 .buy img {
    width: 100px;
 }
 .bg-dark-blur {
    background: #0000002a;
 }
-.bg-tblack {
-   background: #131b23;
-}
-.s-card-icon:nth-child(1) {
-   background: #ba3b46;
+
+.s-card-icon {
+   background: #191919;
    color: #fff;
    border-radius: 50%;
    padding: 7px;
@@ -45,15 +71,18 @@ a {
 .s-card-icon:nth-child(3) {
    background: #000;
 }
-.t-card .box-img {
-   background: linear-gradient(45deg, #131b23 40%, #ba3b46);
+.t-card .box{
+   /* background: linear-gradient(45deg, #131b23 40%, #ba3b46); */
+   /* background: #191919; */
+   border-radius: 20px;
+   
 }
 .t-card .box-img img {
    width: 70px;
    height: 70px;
    border-radius: 50%;
-   border: 2px solid #e2e2e2;
-   transform: translateY(30px);
+   border: 2px solid #5916f3;
+   /* transform: translateY(30px); */
 }
 .heading img {
    width: 70px;
@@ -62,25 +91,24 @@ a {
 a.active {
    background: #ba3b46 !important;
 }
-.bg-red.text-light .t3{
+.bg-red.text-light .t3 {
    color: #fff !important;
 }
 .r-card {
    border-radius: 20px 0px 20px 0px;
-   border-top: 2px solid #ba3b46;
-   border-bottom: 2px solid #ba3b46;
 }
 .r-card .head {
-border-bottom: 1px solid #ba3b46;
-padding-bottom: 18px;
+   border-bottom: 1px solid #9f9f9f;
+   padding: 40px;
 }
-.r-card .head span{
-   background: #ba3b46;
-   padding: 5px 15px;
+.r-card .head span {
+   background: #5916f3;
+   padding: 5px 13px;
    border-radius: 50%;
+   box-shadow: 0px 0px 20px #5916f3;
 }
 .er .r-card .head span {
-   padding:  5px 7px;
+   padding: 5px 7px;
    font-size: 16px !important;
 }
 .r-card li {

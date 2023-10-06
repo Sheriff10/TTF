@@ -15,11 +15,11 @@ export default function Team() {
       <div className="team py-5" id="team">
          <div className="container px-5">
             <div className="header">
-               <small>The HardWorking Members</small>
+               <small className="badge text-light bg-purple">The HardWorking Members</small>
                <br />
-               <span className="fs-1 fw-bold">TTF Team </span>
+               <span className="fs-1 fw-bold text-light">TTF Team </span>
 
-               <div className="text-wrap my-3">
+               <div className="text-wrap my-3 text-gray">
                   <span className="">
                      We are an international team of 4 from Canada, France,
                      Egypt, and Australia, with a diversified skill set from
@@ -32,15 +32,16 @@ export default function Team() {
             </div>
             <div className="row t-card">
                 {teamArr.map((i, index) => (
-                    <div className="col-6 col-lg-3 p-lg-2 mb-4" key={index}>
-                        <div className="box h-100 shadow">
+                    <div className="col-12 col-sm-6 col-lg-3 p-lg-2 mb-4" key={index}>
+                        <div className="box h-100 bg-tblack py-4 px-3 shadow">
                             <div className="box-img d-flex justify-content-center">
                                 <img src={i.img} alt={i.name} width={100} />
                             </div>
-                            <div className="box-text p-1 text-center mt-4">
-                                <span className="fs-4 fw-bold">{i.name}</span> <br />
-                                <small>{i.post}</small> <br />
-                                <small><a href={i.link} className="text-red"><FaTelegram /> </a></small>
+                            <div className="box-text p-1 text-center">
+                                <small className="text-purple fs-3">...</small> <br />
+                                <span className="fs-4 fw-bold text-purple">{i.name}</span> <br />
+                                <small className="text-gray">{i.post}</small> <br />
+                                <small><a href={i.link} className="text-purple"><FaTelegram /> </a></small>
                             </div>
                         </div>
                     </div>

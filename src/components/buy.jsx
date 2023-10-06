@@ -10,12 +10,12 @@ export default function Buy() {
    return (
       <div className="buy py-5">
          <div className="container px-5">
-            <span className="fs-5 fw-bold">
-               Buy <span className="t3">TTF</span> Token or view <span className="t3">Chart</span> on your preffered platform
+            <span className="fs-5 fw-bold text-gray">
+               Buy <span className="text-purple">TTF</span> Token or view <span className="text-purple">Chart</span> on your preffered platform
             </span>
 
             {/* img display */}
-            <div className="row align-items-center bg-dark-blur rounded-pill mt-2 shadow">
+            <div className="row align-items-center rounded bg-gray mt-2 shadow">
                {imgArr.map((i) => (
                   <div className="col d-flex justify-content-center align-items-center  p-3" key={i}>
                      <img src={i} alt={i} />

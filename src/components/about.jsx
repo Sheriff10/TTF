@@ -12,12 +12,12 @@ export default function About() {
 
    const [readMore, setReadMore] = useState(false);
    return (
-      <div className="about bg-tblack text-gray py-5" id="about">
-         <div className="container px-5">
+      <div className="about text-gray py-5" id="about">
+         <div className="container px-5 bg-tblack rounded py-3">
             <div className="header fw-bold">
-               <small className="t3">Introuction</small>
+               <small className="badge bg-purple text-white">Introuction</small>
                <br />
-               <span className="fs-1">About TTF</span>
+               <span className="fs-1 text-white">About TTF</span>
             </div>
             <div
                className="body"
@@ -26,7 +26,7 @@ export default function About() {
             {!readMore && (
                <div className="btn-wrap mt-3">
                   <button
-                     className="btn bg-red p-2 btn-sm rounded text-light"
+                     className="btn bg-purple p-2 btn-sm rounded text-light"
                      onClick={() => setReadMore(!readMore)}
                   >
                      Read more...
@@ -44,7 +44,7 @@ export default function About() {
             {readMore && (
                <div className="btn-wrap mt-3">
                   <button
-                     className="btn bg-red p-2 btn-sm rounded text-light"
+                     className="btn bg-purple p-2 btn-sm rounded text-light"
                      onClick={() => setReadMore(!readMore)}
                   >
                      Read less

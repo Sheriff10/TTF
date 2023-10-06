@@ -39,7 +39,7 @@ const Header = () => {
                   </div>
                   <div className="btn-wrap">
                      <a href="#" download>
-                        <div className="btn btn-light rounded-pill fw-bold px-3">
+                        <div className="btn bg-purple text-light rounded-pill fw-bold px-3">
                            Try TTF BOT
                         </div>
                      </a>
