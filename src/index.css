@@ -1,7 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
 
-#root body, #root h1, #root p, #root span, #root small, #root button, #root small, #root li{
-   font-family: 'Nunito', sans-serif;
+#root body,
+#root h1,
+#root p,
+#root span,
+#root small,
+#root button,
+#root small,
+#root li {
+   font-family: "Nunito", sans-serif;
 }
 
 .heading .row {
@@ -12,6 +19,22 @@
 .blur-bg {
    background: #ffffff69;
    backdrop-filter: blur(10px);
+}
+.intro.bg1 {
+   background: url("/public/tfit.avif") no-repeat;
+   background-size: cover;
+}
+.intro.bg2 {
+   background: url("/public/tfit2.avif") no-repeat;
+   background-size: cover;
+}
+.intro.bg3 {
+   background: url("/public/tfit3.avif") no-repeat;
+   background-size: cover;
+}
+.intro .bg-wrap {
+   backdrop-filter: blur(6px);
+   background: #000000ac;
 }
 .intro .t {
    font-size: 70px;
@@ -35,7 +58,6 @@
    justify-content: center;
 }
 
-
 @media (max-width: 994px) {
    .intro .t {
       font-size: 40px;
@@ -44,16 +66,16 @@
       /* background: url('/public/TTFgif.gif') no-repeat;
       background-size: cover; 
       background-position: center; */
-  }
-  .intro .row{
-   min-height: 70vh;
-  }
-  .intro .bg-wrap {
-   /* background: #02020294; */
-   padding: 20px;
-  }
-  
-    .intro-img{
+   }
+   .intro .row {
+      min-height: 70vh;
+   }
+   .intro .bg-wrap {
+      /* background: #02020294; */
+      padding: 20px;
+   }
+
+   .intro-img {
       display: none !important;
    }
    .bots .b-version.r {

@@ -1,12 +1,24 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { DataContext } from "../context/DataContext";
 export default function Intro() {
    const {
       state: { intro },
    } = useContext(DataContext);
+   const [bgClass, setBgClass] = useState("bg1")
+   const [trigger, setTrigger] = useState(0)
+
+   useEffect(() => {setTimeout(() => toggleBg(), 1000)}, [trigger])
+
+   const toggleBg = () => {
+      const bgArr = ["bg1", "bg2", "bg3"]
+      const randomBg = bgArr[Math.floor(Math.random() * bgArr.length)]
+      setBgClass(randomBg)
+      setTrigger(trigger+1)
+      console.log(randomBg)
+   }
 
    return (
-      <div className="intro ">
+      <div className={`intro ${bgClass}`}>
          <div className="bg-wrap h-100 pt-5">
          <div className="container h-100 px-3">
             <div className="row h-100 align-items-center bg-dar">
