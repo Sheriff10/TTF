@@ -30,7 +30,7 @@ const AdminLayout = ({ children }) => {
    ];
 
    return (
-      <div className={`d-flex ${isOpen ? "toggled" : ""} w-100`} id="wrapper">
+      <div className={`d-flex ${isOpen ? "toggled" : ""} bg-white w-100`} id="wrapper">
          {/* Sidebar */}
          <div className=" border-right" id="sidebar-wrapper">
             <div className="sidebar-heading">
