@@ -62,10 +62,8 @@
    .intro .t {
       font-size: 40px;
    }
-   .intro {
-      /* background: url('/public/TTFgif.gif') no-repeat;
-      background-size: cover; 
-      background-position: center; */
+   .intro .bg-wrap {
+      backdrop-filter: none;
    }
    .intro .row {
       min-height: 70vh;
