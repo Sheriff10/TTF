@@ -55,6 +55,8 @@ a {
 
 .buy img {
    width: 100px;
+   height: 100px;
+   object-fit: contain;
 }
 .bg-dark-blur {
    background: #0000002a;

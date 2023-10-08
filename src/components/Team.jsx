@@ -7,9 +7,9 @@ export default function Team() {
     }
     const teamArr = [
         teamFunc("Don", '/don.jpeg', "CFO & Logistics Manager", 'https://t.me/DON_the_only'),
-        teamFunc("Dan", '/dan.jpeg', "CMO & Strategic Advisor", 'https://t.me/dantek5'),
+        teamFunc("Dan", '/dan.jpeg', "COO & CMO", 'https://t.me/dantek5'),
         teamFunc("Muhammad", '/t1.jpeg', "CTO & Senior Developer", 'https://t.me/hosnybtw'),
-        teamFunc("Emma", '/emma.jpeg', "CEO & Accountant", 'https://t.me/Emma_6873'),
+        teamFunc("Emma", '/emma.jpeg', "Junior Developer", 'https://t.me/Emma_6873'),
     ]
    return (
       <div className="team py-5" id="team">
