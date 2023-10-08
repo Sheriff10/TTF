@@ -19,8 +19,8 @@ export default function Roadmap() {
                {roadmap.map((rCard, index) => (
                   <div className="col-lg-3 col-md-6 col-12 mb-4 " key={index}>
                      <div className="r-card bg-dark-blur p-4 h-100">
-                        <div className="head d-flex mb-2 justify-content-center">
-                        <span className="fw-bold fs-6">{index+1}</span>
+                        <div className="head d-flex mb-2 justify-content-center align-items-cent ">
+                         <span className="fw-bold fs-6">{index+1}</span>
                         </div>
                         <div className="body py-5">
                            <ul className="m-0 p-0">

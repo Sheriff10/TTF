@@ -11,6 +11,7 @@ import Slider from "./components/slider";
 import Solution from "./components/solution";
 import Team from "./components/Team";
 import Tokenomics from "./components/tokenomics";
+import Video from "./components/video";
 
 export default function Page() {
    return (

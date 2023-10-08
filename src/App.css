@@ -180,3 +180,6 @@ a.active {
    border-radius: 0px;
    margin: 20px;
 }
+.video video {
+   width: calc(100%-10rem)
+}

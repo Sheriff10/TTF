@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useContext } from "react";
 import { DataContext } from "../context/DataContext";
 import DOMPurify from "dompurify";
+import Video from "./video";
 
 export default function About() {
    const {
@@ -14,6 +15,9 @@ export default function About() {
    return (
       <div className="about text-gray py-5" id="about">
          <div className="container px-5 bg-tblack rounded py-3">
+            <div className="video-wrap mb-5">
+               <Video />
+            </div>
             <div className="header fw-bold">
                <small className="badge bg-purple text-white">Introuction</small>
                <br />
