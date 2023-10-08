@@ -140,3 +140,43 @@ a.active {
 .float-btn {
    z-index: 80;
 }
+.slider .card {
+   background: transparent;
+   border: none;
+   border-top: 3px solid #5916f3;
+   border-radius: 20px;
+   overflow: hidden;
+}
+.slider .text-group{
+   border-bottom: 3px solid #5916f3;
+   border-radius: 20px !important;
+}
+.slider .img-wrap {
+   overflow: hidden;
+}
+.slider .img-wrap img {
+   width: 100%;
+   height: 300px;
+   object-fit: cover;
+   border-radius: 20px 20px 0px 0px;
+   transition: .5s ease;
+}
+.slider .img-wrap .img-overlay {
+   background: #00000090;
+   opacity: 0;
+   transition: .5s ease;
+}
+.slider .img-wrap:hover .img-overlay {
+   transition: .5s ease;
+   opacity: 1;
+}
+.slider .img-wrap:hover img {
+   transform: scale(1.1);
+   transition: .5s ease;
+}
+.slider .swiper-pagination-bullet{
+   background: #5916f3 ;
+   width: 20px;
+   border-radius: 0px;
+   margin: 20px;
+}

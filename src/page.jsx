@@ -7,6 +7,7 @@ import Header from "./components/header";
 import Intro from "./components/intro";
 import Partners from "./components/partners";
 import Roadmap from "./components/Roadmap";
+import Slider from "./components/slider";
 import Solution from "./components/solution";
 import Team from "./components/Team";
 import Tokenomics from "./components/tokenomics";
@@ -21,6 +22,7 @@ export default function Page() {
             <Buy />
             <About />
             <Solution />
+            <Slider />
             <Tokenomics />
             <Roadmap />
             <Partners />
