@@ -185,3 +185,6 @@ a.active {
 .btn.bg-purple:hover {
    background: #410ac3;
 }
+.btn.bg-gray:hover {
+   background: #b59eea;
+}
