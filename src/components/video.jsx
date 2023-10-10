@@ -3,10 +3,10 @@ import React from "react";
 export default function Video() {
    return (
       <div className="video">
-         <div className="container px-3">
+         <div className="container">
             {/* Video section */}
             <div
-               className="w-full flex justify-center items-center my-4 px-4"
+               className="w-full flex justify-center items-center my-4"
                style={{ opacity: 1}}
             >
                <video

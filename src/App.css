@@ -13,7 +13,7 @@ body {
 .text-gray {
    color: #9f9f9f;
 }
-.bg-gray{
+.bg-gray {
    background: #9f9f9f;
 }
 .bg-tblack {
@@ -31,14 +31,12 @@ a {
    color: #e2e2e2;
 }
 
-
 /* PAGES  */
 
 .h-i-wrap {
    min-height: 70vh;
    /* background: linear-gradient(45deg, #131b23 40%, #ba3b46); */
    background: #191919;
-
 }
 .bg-red {
    background: #ba3b46;
@@ -73,11 +71,10 @@ a {
 .s-card-icon:nth-child(3) {
    background: #000;
 }
-.t-card .box{
+.t-card .box {
    /* background: linear-gradient(45deg, #131b23 40%, #ba3b46); */
    /* background: #191919; */
    border-radius: 20px;
-   
 }
 .t-card .box-img img {
    width: 70px;
@@ -149,7 +146,7 @@ a.active {
    border-radius: 20px;
    overflow: hidden;
 }
-.slider .text-group{
+.slider .text-group {
    border-bottom: 3px solid #5916f3;
    border-radius: 20px !important;
 }
@@ -161,27 +158,30 @@ a.active {
    height: 300px;
    object-fit: cover;
    border-radius: 20px 20px 0px 0px;
-   transition: .5s ease;
+   transition: 0.5s ease;
 }
 .slider .img-wrap .img-overlay {
    background: #00000090;
    opacity: 0;
-   transition: .5s ease;
+   transition: 0.5s ease;
 }
 .slider .img-wrap:hover .img-overlay {
-   transition: .5s ease;
+   transition: 0.5s ease;
    opacity: 1;
 }
 .slider .img-wrap:hover img {
    transform: scale(1.1);
-   transition: .5s ease;
+   transition: 0.5s ease;
 }
-.slider .swiper-pagination-bullet{
-   background: #5916f3 ;
+.slider .swiper-pagination-bullet {
+   background: #5916f3;
    width: 20px;
    border-radius: 0px;
    margin: 20px;
 }
 .video video {
-   width: calc(100%-10rem)
+   width: calc(100%-10rem);
+}
+.btn.bg-purple:hover {
+   background: #410ac3;
 }

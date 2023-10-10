@@ -31,7 +31,7 @@ const Header = () => {
                   <div className="menu-con">
                      <ul className="gap-3">
                         {header.map((menu) => (
-                           <li key={menu._id}>
+                           <li key={menu._id} onClick={toggleMenu}>
                               <a href={menu.link}>{menu.title}</a>
                            </li>
                         ))}

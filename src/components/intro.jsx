@@ -14,7 +14,6 @@ export default function Intro() {
       const randomBg = bgArr[Math.floor(Math.random() * bgArr.length)]
       setBgClass(randomBg)
       setTrigger(trigger+1)
-      console.log(randomBg)
    }
 
    return (
