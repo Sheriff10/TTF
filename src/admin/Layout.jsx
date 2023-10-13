@@ -27,6 +27,7 @@ const AdminLayout = ({ children }) => {
       menuFunc("Solution", "/admin/edit-solution"),
       menuFunc("Roadmap", "/admin/edit-roadmap"),
       menuFunc("Partners", "/admin/edit-partners"),
+      menuFunc("Feature", "/admin/edit-bot"),
    ];
 
    return (

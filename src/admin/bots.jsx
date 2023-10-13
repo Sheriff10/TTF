@@ -8,7 +8,7 @@ import AdminLayout from "./Layout";
 
 const EditBot = () => {
    const {
-      state: { partners },
+      state: { feature },
       getData,
    } = useContext(DataContext);
 
@@ -33,6 +33,13 @@ const EditBot = () => {
       reader.readAsDataURL(validImage);
    };
 
+   // reset field and image
+   const reset = () => {
+      setViewImage("");
+      setText("");
+      setTitle("");
+   };
+
    const uploadImage = async (query, data) => {
       try {
          setLoading(true);
@@ -55,6 +62,8 @@ const EditBot = () => {
          console.log(response);
          getData();
          setLoading(false);
+
+         reset();
       } catch (error) {
          console.log(error);
          setLoading(false);
@@ -158,17 +167,23 @@ const EditBot = () => {
                </div>
             </div>
 
-            {/* Display Existing Partner Images */}
-            {/* <div className="mt-4">
-               <h5>Existing Partner Images</h5>
+            {/* Display Existing bot features  */}
+            <div className="mt-4">
+               <h5>Existing Bot feature Images</h5>
                <div className="row">
-                  {partners.map((partnerImage) => (
+                  {feature.map((partnerImage) => (
                      <div key={partnerImage._id} className="col-md-3 mb-3">
-                        <div className="card">
+                        <div className="card text-center">
+                           <div className="text-wrap text-center">
+                              <span className="fw-b fs-4">
+                                 {partnerImage.title}
+                              </span>
+                           </div>
                            <img
                               src={partnerImage.img}
-                              className="card-img-top"
+                              className="card-img-tp mx-4 img-fluid"
                               alt="Partner"
+                              width={200}
                            />
                            <div className="card-body">
                               <button
@@ -193,7 +208,7 @@ const EditBot = () => {
                      </div>
                   ))}
                </div>
-            </div> */}
+            </div>
          </div>
       </AdminLayout>
    );

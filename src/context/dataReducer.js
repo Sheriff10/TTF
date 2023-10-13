@@ -20,6 +20,9 @@ export const INITIAL_DATA_STATE = {
    roadmap: [
       // arrays of roadmap list
    ],
+   feature: [
+      // arrays of features list
+   ],
 };
 
 export const DataReducer = (state, action) => {

@@ -240,13 +240,6 @@
 //    );
 // }
 
-
-
-
-
-
-
-
 import React, { useContext } from "react";
 import { DataContext } from "../context/DataContext";
 import { FaCheck } from "react-icons/fa";
@@ -267,7 +260,8 @@ export default function Roadmap() {
             "Monitor Max Trx's",
             "Monitor Team Funds",
          ],
-         link: "/",
+         btnText: "GET ACCESS NOW",
+         link: "https://t.me/ttfbotbot",
       },
       {
          title: "Pro Version",
@@ -280,7 +274,8 @@ export default function Roadmap() {
             "Buybacks, Burns, Sells",
             "No Sponsored Ads",
          ],
-         link: "/",
+         btnText: "HOLD $200 OF TTF",
+         link: "https://app.uniswap.org/tokens/ethereum/0x8e32b8a41f2e86a3ee198912ac8d756c84295b40",
       },
       {
          title: "Premium Version",
@@ -293,7 +288,8 @@ export default function Roadmap() {
             "TTF VIP Lounge",
             "Facilitate OTC Trades",
          ],
-         link: "/",
+         btnText: "HOLD $1000 OF TTF",
+         link: "https://app.uniswap.org/tokens/ethereum/0x8e32b8a41f2e86a3ee198912ac8d756c84295b40",
       },
       {
          title: "Custom Version",
@@ -306,7 +302,8 @@ export default function Roadmap() {
             "Follow-up Pinned Post",
             "Buyback into Project",
          ],
-         link: "/",
+         btnText: "CHAT NOW",
+         link: "https://t.me/dantek5",
       },
    ];
    return (
@@ -314,7 +311,7 @@ export default function Roadmap() {
          <div className="container">
             <div className="header py-5">
                <small className="bg-purple badge text-light">
-               What we offer
+                  What we offer
                </small>{" "}
                <br />
                <span className="fw-bold fs-1">Bot Versions</span>
@@ -337,7 +334,7 @@ export default function Roadmap() {
                            </div>
                            <span className="fw-bold fs-6">{index + 1}</span>
                         </div>
-                        <div className="body py-5">
+                        <div className="body py-5 pb-2">
                            <ul className="m-0 p-0">
                               {botCard.list.map((i) => (
                                  <li
@@ -352,6 +349,13 @@ export default function Roadmap() {
                                  </li>
                               ))}
                            </ul>
+                           <div className="btn-wrap text-center mt-5">
+                              <a href={botCard.link}>
+                                 <button className="btn bg-gray fw-bold w-100">
+                                    {botCard.btnText}
+                                 </button>
+                              </a>
+                           </div>
                         </div>
                      </div>
                   </div>
