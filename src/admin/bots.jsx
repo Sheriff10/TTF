@@ -6,7 +6,7 @@ import { DataContext } from "../context/DataContext";
 import { getToken } from "../function/post";
 import AdminLayout from "./Layout";
 
-const EditPartners = () => {
+const EditBot = () => {
    const {
       state: { partners },
       getData,
@@ -17,7 +17,10 @@ const EditPartners = () => {
    const [loading, setLoading] = useState(false);
 
    const fileRef = useRef(null);
-   const [link, setLink] = useState("");
+
+   // Post data (title and text ) state
+   const [title, setTitle] = useState("");
+   const [text, setText] = useState("");
 
    const handleSelectedFile = (val) => {
       setImage(val);
@@ -40,7 +43,7 @@ const EditPartners = () => {
          }
 
          const response = await axios.post(
-            `${window.api}/partners/${query}`,
+            `${window.api}/feature/${query}`,
             data,
             {
                headers: {
@@ -60,29 +63,11 @@ const EditPartners = () => {
    return (
       <AdminLayout>
          <div className="container">
-            <h2>Partner Image Editor</h2>
+            <h2>Bot Feature Editor</h2>
 
             {/* Partner Image Form */}
             <div className="mt-4">
-               <h5>Add New Partner Image</h5>
-               {/* <div className="input-group mb-3">
-                  <input
-                     type="text"
-                     className="form-control"
-                     placeholder="Enter Image URL"
-                     value={newImageURL}
-                     onChange={(e) => setNewImageURL(e.target.value)}
-                  />
-                  <div className="input-group-append">
-                     <button
-                        className="btn btn-success"
-                        type="button"
-                        onClick={handleAddPartnerImage}
-                     >
-                        Add Partner Image
-                     </button>
-                  </div>
-               </div> */}
+               <h5>Add New Bot Feature</h5>
 
                <div className="row">
                   <div className="col-lg-6">
@@ -98,7 +83,7 @@ const EditPartners = () => {
                                  fileRef.current.click();
                               }}
                            >
-                              Add Partner Image
+                              Add Feature Image
                            </span>
                            <div className="input-group">
                               <input
@@ -116,14 +101,26 @@ const EditPartners = () => {
                   <div className="col-lg-6">
                      {viewImage && (
                         <>
-                           {/* Input for link */}
+                           {/* Input title and text */}
                            <div className="form-group mb-3">
-                              <label>Partner Link</label>
+                              <label>Title</label>
                               <input
                                  type="text"
                                  className="form-control"
-                                 placeholder="Link"
-                                 onChange={(e) => setLink(e.target.value)}
+                                 placeholder="Title"
+                                 value={title}
+                                 onChange={(e) => setTitle(e.target.value)}
+                              />
+                           </div>
+                           <div className="form-group mb-3">
+                              <label>Text</label>
+                              <textarea
+                                 type="text"
+                                 className="form-control"
+                                 placeholder="Txt"
+                                 row={3}
+                                 value={text}
+                                 onChange={(e) => setText(e.target.value)}
                               />
                            </div>
                            <div className="img-wrap">
@@ -131,15 +128,17 @@ const EditPartners = () => {
                                  src={viewImage}
                                  alt="Partner"
                                  className="img-fluid"
+                                 width={100}
                               />
 
                               <div className="btn-wrap mt-3">
                                  <button
                                     className="btn w-100 rounded-pill bg-red text-light"
                                     onClick={() =>
-                                       uploadImage("upload", {
+                                       uploadImage("post", {
                                           Image: image,
-                                          link: link,
+                                          title,
+                                          text,
                                        })
                                     }
                                  >
@@ -160,7 +159,7 @@ const EditPartners = () => {
             </div>
 
             {/* Display Existing Partner Images */}
-            <div className="mt-4">
+            {/* <div className="mt-4">
                <h5>Existing Partner Images</h5>
                <div className="row">
                   {partners.map((partnerImage) => (
@@ -194,10 +193,10 @@ const EditPartners = () => {
                      </div>
                   ))}
                </div>
-            </div>
+            </div> */}
          </div>
       </AdminLayout>
    );
 };
 
-export default EditPartners;
+export default EditBot;

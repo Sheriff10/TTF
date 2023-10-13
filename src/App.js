@@ -10,10 +10,11 @@ import EditPartners from "./admin/partners";
 import DataContextWrap from "./context/DataContext";
 import EditRoadmap from "./admin/edit-roadmap";
 import Login from "./admin/login";
+import EditBot from "./admin/bots";
 
 function App() {
-   // window.api = 'http://localhost:5000'
-   window.api = "https://good-teal-hermit-crab-cape.cyclic.cloud"
+   window.api = 'http://localhost:5000'
+   // window.api = "https://good-teal-hermit-crab-cape.cyclic.cloud"
    return (
       <div className="App">
          <DataContextWrap>
@@ -31,6 +32,7 @@ function App() {
                   element={<EditPartners />}
                />
                <Route path={"/admin/edit-roadmap"} element={<EditRoadmap />} />
+               <Route path={"/admin/edit-bot"} element={<EditBot />} />
                <Route path={"/admin/login"} element={<Login />} />
 
             </Routes>
