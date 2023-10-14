@@ -13,8 +13,8 @@ import Login from "./admin/login";
 import EditBot from "./admin/bots";
 
 function App() {
-   window.api = 'http://localhost:5000'
-   // window.api = "https://good-teal-hermit-crab-cape.cyclic.cloud"
+   // window.api = 'http://localhost:5000'
+   window.api = "https://good-teal-hermit-crab-cape.cyclic.cloud"
    return (
       <div className="App">
          <DataContextWrap>
