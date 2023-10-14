@@ -8,8 +8,8 @@ export default function About() {
    const {
       state: { about },
    } = useContext(DataContext);
-   const sanitizedContent = DOMPurify.sanitize(about.about01);
-   const sanitizedContent2 = DOMPurify.sanitize(about.about02);
+   const sanitizedContent = DOMPurify.sanitize(about.about02);
+   const sanitizedContent2 = DOMPurify.sanitize(about.about01);
 
    const [readMore, setReadMore] = useState(false);
    return (
@@ -41,7 +41,7 @@ export default function About() {
             {readMore && (
                <div
                   dangerouslySetInnerHTML={{ __html: sanitizedContent2 }}
-                  className="text-wrap blur-bg p-lg-5 p-2 rounded mt-5"
+                  className="text-wrap bg-tblack2 p-lg-5 p-2 rounded mt-5"
                />
             )}
 

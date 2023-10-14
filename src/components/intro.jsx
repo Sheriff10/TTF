@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import { FaArrowRight, FaBook, FaKey, FaUserShield } from "react-icons/fa";
 import { DataContext } from "../context/DataContext";
 export default function Intro() {
    const {
@@ -41,12 +42,24 @@ export default function Intro() {
                      <div className="btn-wrap d-flex gap-2 ">
                         <div className="col">
                            <button className="btn bg-purple text-white rounded h-100 col-12 p-lg-2 ">
-                              Read Whitepaper
+                              <FaBook /> Whitepaper
                            </button>
                         </div>
                         <div className="col">
                            <button className="btn  text-dark rounded h-100 col-12 bg-gray p-lg-2 ">
-                              Bot guide
+                              Bot guide <FaArrowRight />
+                           </button>
+                        </div>
+                     </div>
+                     <div className="btn-wrap d-flex gap-2 mt-3">
+                     <div className="col">
+                           <button className="btn  text-dark rounded h-100 col-12 bg-gray p-lg-2 ">
+                              <FaKey /> Audit
+                           </button>
+                        </div>
+                        <div className="col">
+                           <button className="btn bg-purple text-white rounded h-100 col-12 p-lg-2 ">
+                              KYC Certificate <FaUserShield />
                            </button>
                         </div>
                      </div>

@@ -24,11 +24,11 @@ export default function Page() {
             <About />
             <Solution />
             <Slider />
+            <Bots />
             <Tokenomics />
             <Roadmap />
             <Partners />
             <Team />
-            <Bots />
             <Footer />
          </div>
    );

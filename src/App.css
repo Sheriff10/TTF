@@ -51,11 +51,11 @@ a {
   background: #ba3b46;
 } */
 
-.buy img {
+/* .buy img {
    width: 100px;
    height: 100px;
    object-fit: contain;
-}
+} */
 .bg-dark-blur {
    background: #0000002a;
 }
@@ -187,4 +187,14 @@ a.active {
 }
 .btn.bg-gray:hover {
    background: #b59eea;
+}
+.buy img {
+   cursor: pointer;
+   width: 50%;
+}
+.buy .img1{
+   width: 70%;
+}
+.buy .img5, .buy .img4{
+   width: 45%;
 }
