@@ -192,9 +192,57 @@ a.active {
    cursor: pointer;
    width: 50%;
 }
-.buy .img1{
+.buy .img1 {
    width: 70%;
 }
-.buy .img5, .buy .img4{
+.buy .img5,
+.buy .img4 {
    width: 45%;
+}
+
+.roadmap .liner-right {
+   border-left: 2px solid #9f9f9f;
+}
+.roadmap .liner-left {
+   border-right: 2px solid #9f9f9f;
+}
+.liner-left .box,
+.liner-right .box {
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+   gap: 30px;
+}
+.box .head {
+   background: #000;
+   padding: 10px;
+   width: 30%;
+   border-radius: 20px;
+   text-align: center;
+}
+.box .body {
+   background: #191919;
+   border-radius: 20px;
+   padding: 20px 30px;
+}
+.roadmap .liner-left ul li {
+   flex-direction: row-reverse;
+}
+
+@media (max-width: 575px) {
+   .roadmap .liner-right,
+   .roadmap .liner-left {
+      /* border-left: 2px solid #9f9f9f; */
+      /* border-right: none; */
+      padding: 0px 20px !important;
+   }
+   .roadmap .row {
+      margin-bottom: 20px;
+   }
+   .roadmap .liner-left {
+      text-align: right;
+   }
+   .roadmap .liner-left ul li {
+      flex-direction: row;
+   }
 }
