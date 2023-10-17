@@ -151,12 +151,14 @@ a.active {
    border-radius: 20px !important;
 }
 .slider .img-wrap {
+   border-radius: 20px 20px 0px 0px;
    overflow: hidden;
+   height: 300px;
 }
+
 .slider .img-wrap img {
    width: 100%;
-   height: 300px;
-   object-fit: cover;
+   /* object-fit: contain; */
    border-radius: 20px 20px 0px 0px;
    transition: 0.5s ease;
 }
