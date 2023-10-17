@@ -28,7 +28,7 @@ export default function Team() {
    ];
    return (
       <div className="team py-5" id="team">
-         <div className="container px-5">
+         <div className="container">
             <div className="header">
                <small className="badge text-light bg-purple">
                   The HardWorking Members

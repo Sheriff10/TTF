@@ -9,7 +9,7 @@ export default function Tokenomics() {
    ];
    return (
       <div className="tk bg-dark-blur " id="tokenomics">
-         <div className="container px-lg-5 p-5 ">
+         <div className="container">
             <div className="header py-5">
                 <small className="bg-purple badge text-light">Our Economic Value</small> <br />
                 <span className="fs-1 fw-bold text-light">Tokenomics</span>

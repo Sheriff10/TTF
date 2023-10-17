@@ -20,7 +20,7 @@ export default function Intro() {
    return (
       <div className={`intro ${bgClass}`}>
          <div className="bg-wrap h-100 pt-5">
-         <div className="container h-100 px-3">
+         <div className="container h-100 ">
             <div className="row h-100 align-items-center bg-dar">
                <div className="col-lg-6">
                   <div className="intro-text">

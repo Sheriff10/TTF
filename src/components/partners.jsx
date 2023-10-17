@@ -8,7 +8,7 @@ export default function Partners() {
    } = useContext(DataContext);
    return (
       <div className="partners bg-tblack py-5">
-         <div className="container px-5">
+         <div className="container">
             <div className="head text-center py-3">
                <small className="badge text-purple bg-dark">
                   Collaboration

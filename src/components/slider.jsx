@@ -16,7 +16,7 @@ export default function Slider() {
 
    return (
       <div className="slider bg-dark-blur">
-         <div className="container px-3">
+         <div className="container">
             <div className="header py-5">
                <small className="bg-purple badge text-light">
                   Features & Benefits

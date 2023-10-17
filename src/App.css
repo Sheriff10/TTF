@@ -245,4 +245,7 @@ a.active {
    .roadmap .liner-left ul li {
       flex-direction: row;
    }
+   .container {
+      padding: 20px !important;
+   }
 }

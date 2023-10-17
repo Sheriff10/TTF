@@ -34,7 +34,7 @@ export default function Buy() {
    const navi = (link) => window.location.href = link
    return (
       <div className="buy py-5">
-         <div className="container px-5">
+         <div className="container">
             <span className="fs-5 fw-bold text-gray">
                Buy <span className="text-purple">TTF</span> Token or view{" "}
                <span className="text-purple">Chart</span> on your preffered

@@ -11,7 +11,7 @@ export default function Video() {
             >
                <video
                   autoPlay
-                  className="rounded h-100 w-100"
+                  className="rounded w-100"
                   controls
                >
                   <source src="https://ttfbot.io/intro.mp4" type="video/mp4" />

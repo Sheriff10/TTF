@@ -13,8 +13,8 @@ export default function About() {
 
    const [readMore, setReadMore] = useState(false);
    return (
-      <div className="about text-gray py-5" id="about">
-         <div className="container px-5 bg-tblack rounded py-3">
+      <div className="about text-gray" id="about">
+         <div className="container bg-tblack rounded py-3">
             <div className="video-wrap mb-5">
                <Video />
             </div>

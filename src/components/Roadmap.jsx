@@ -7,7 +7,7 @@ export default function Roadmap() {
       state: { roadmap },
    } = useContext(DataContext);
    return (
-      <div className="roadmap bg-tblack py-5 p-5 text-light" id="roadmap">
+      <div className="roadmap bg-tblack py-5 text-light" id="roadmap">
          <div className="container">
             <div className="header py-5 text-center">
                <small className="bg-purple badge text-light">
