@@ -18,7 +18,7 @@ const Header = () => {
    return (
       <>
          <header>
-            <div className="container blur-bg rounded-pill">
+            <div className=" px-lg-5 px-3 blur-bg rounded-pill">
                <div className="d-flex align-items-center justify-content-between">
                   <div className="logo-con">
                      <img

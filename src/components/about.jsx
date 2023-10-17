@@ -15,7 +15,7 @@ export default function About() {
    return (
       <div className="about text-gray" id="about">
          <div className="container bg-tblack rounded py-3">
-            <div className="video-wrap mb-5">
+            <div className="video-wrap p-0  mb-5">
                <Video />
             </div>
             <div className="header fw-bold">

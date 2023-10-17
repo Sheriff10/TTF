@@ -8,8 +8,6 @@ import { Pagination } from "swiper/modules";
 import { DataContext } from "../context/DataContext";
 
 export default function Slider() {
-   const dum = [1, 1, 1, 1, 1, 1];
-   const imgFunc = (img, title, description, link) => {};
    const {
       state: { feature },
    } = useContext(DataContext);

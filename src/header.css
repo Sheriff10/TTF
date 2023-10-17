@@ -193,4 +193,7 @@ header .header-logo {
    .toggled #sidebar-wrapper {
       margin-left: -15rem;
    }
+   header .container {
+      padding: 0px !important;
+   }
 }

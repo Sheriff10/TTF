@@ -30,13 +30,6 @@ export default function Intro() {
                         </div>
                         <h1 className="t fw-boold">{intro.intro_title}</h1>
                      </div>
-                     {/* <div className="text-wrap d-flex">
-                        <div className="wrap blur-bg p-2 px-4 rounded-pill ">
-                           <span className="t3 text-purple fw-bold">Track</span>{" "}
-                           <span className="t2 fw-bold">The</span>{" "}
-                           <span className="t3 fw-bold">Fund</span>
-                        </div>
-                     </div> */}
                      <p className="text-gray">{intro.intro_slogan}</p>
 
                      <div className="btn-wrap d-flex gap-2 ">
